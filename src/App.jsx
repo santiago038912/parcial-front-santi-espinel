@@ -1,4 +1,4 @@
-import historia from "./components/data";
+import historia from "./json/data";
 import React, {Component} from "react";
 import Opciones from "./components/Opciones";
 import Recordatorio from "./components/Recordatorio";
