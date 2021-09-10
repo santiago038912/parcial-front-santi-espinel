@@ -1,11 +1,11 @@
-import data from "./components/data";
+import historia from "./components/data";
 import React, {Component} from "react";
 import Opciones from "./components/Opciones";
 import Recordatorio from "./components/Recordatorio";
 import "./App.css";
 
 
-const historial = [];
+const respuestas = [];
 
 class App extends Component {
 
@@ -16,10 +16,14 @@ class App extends Component {
           opcionAnterior: "",
         };
       }
+
+      componentDidMount() {
+        console.log("Las funciones son mejores que las clases")
+      }
     
-      componentDidUpdate(prevState) {
-        if (prevState.contador !== this.state.contador) {
-          historial.push(this.state.opcionAnterior);
+      componentDidUpdate(anterior) {
+        if (anterior.contador !== this.state.contador) {
+          respuestas.push(this.state.opcionAnterior);
         }
       }
     
@@ -51,29 +55,27 @@ class App extends Component {
 
         }
 
-        console.log(historial);
-
       };
     
       render() {
         return (
 
           <div className="layout">
-            <h1 className="historia">{data[this.state.contador].historia}</h1>
+            <h1 className="historia">{historia[this.state.contador].historia}</h1>
 
             <Opciones
               handleClick={this.handleClick}
-              opA={data[this.state.contador].opciones.a}
-              opB={data[this.state.contador].opciones.b}
+              opA={historia[this.state.contador].opciones.a}
+              opB={historia[this.state.contador].opciones.b}
             />
 
             <Recordatorio
               opcionAnterior={this.state.opcionAnterior}
-              historial={historial.map(
+              respuestas={respuestas.map(
                 (p , index) => (
                   <li key={index}>{p}</li>
                 ),
-                data[this.state.contador].id
+                historia[this.state.contador].id
               )}
             />
 

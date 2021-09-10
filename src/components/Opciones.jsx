@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 class Opciones extends Component {
+
+  componentDidMount() {
+    console.log("Las funciones son mejores que las clases")
+  }
+  
   render() {
     return (
 
