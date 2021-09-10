@@ -61,6 +61,7 @@ class App extends Component {
         return (
 
           <div className="layout">
+          
             <h1 className="historia">{historia[this.state.contador].historia}</h1>
 
             <Opciones
