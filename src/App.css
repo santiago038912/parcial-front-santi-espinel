@@ -3,8 +3,24 @@
 * {
     margin: 0;
     box-sizing: border-box;
+  }
+  
+  body {
     background-color: rgb(110, 0, 0);
   }
+
+  .swal2-popup {
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .swal2-title {
+    color: rgb(59, 59, 59);
+  }
+
+  .swal2-styled.swal2-confirm {
+    background-color: rgb(110, 0, 0);
+  }
+
   .layout {
     height: 100vh;
     max-width: 630px;

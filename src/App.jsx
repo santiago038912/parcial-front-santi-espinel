@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import historia from "./json/data";
 import React, {Component} from "react";
 import Opciones from "./components/Opciones";
@@ -6,6 +8,8 @@ import "./App.css";
 
 
 const respuestas = [];
+
+const MySwal = withReactContent(Swal);
 
 class App extends Component {
 
@@ -32,7 +36,9 @@ class App extends Component {
         const id = p.target.id;
 
         if (this.state.contador >= 7) {
-          alert("Final sin desayuno :(");
+          MySwal.fire(
+            'Has acabado la historia'
+          );
         } else if (id === "A" && this.state.opcionAnterior !== "A") {
           this.setState({
             contador: this.state.contador + 1,
@@ -61,7 +67,7 @@ class App extends Component {
         return (
 
           <div className="layout">
-          
+
             <h1 className="historia">{historia[this.state.contador].historia}</h1>
 
             <Opciones
